@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<form action="http://127.0.0.1:4000/upload" method="post" id="f">
+  <div>
+    <input type="file" id=x name='file'>
+  </div>
+  <div>
+    <input type="submit" id=btn>
+  </div>
+</form>
+<div class="prev">
+  <p id="aa">我是战士</p>
+  <img src="" id="img">
+</div>
+</body>
+</html>
+<script>
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    let formData = new FormData();
+    let fileInput = document.getElementById('x');
+    formData.append('file', fileInput.files[0]);
+    console.log(fileInput.files[0]);
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', f.action);
+    xhr.onload = function(){
+      console.log(xhr)
+      img.src = `http://127.0.0.1:4000/preview/${xhr.response}`
+    };
+    xhr.send(formData);
+  })
+</script>
