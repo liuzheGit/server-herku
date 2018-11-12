@@ -5,7 +5,7 @@
   <title>Title</title>
 </head>
 <body>
-<form action="http://127.0.0.1:4000/upload" method="post" id="f">
+<form action="https://upload-1.herokuapp.com/upload" method="post" id="f">
   <div>
     <input type="file" id=x name='file'>
   </div>
@@ -30,7 +30,7 @@
     xhr.open('POST', f.action);
     xhr.onload = function(){
       console.log(xhr)
-      img.src = `http://127.0.0.1:4000/preview/${xhr.response}`
+      img.src = `https://upload-1.herokuapp.com/preview/${xhr.response}`
     };
     xhr.send(formData);
   })
