@@ -10,7 +10,7 @@ const cors = require('cors');
 
 const app = express();
 
-app.get('/', (req, res)=>{
+app.get('/', cors() ,(req, res)=>{
   res.send('hello liuZhe!');
 });
 
