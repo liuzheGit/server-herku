@@ -8,5 +8,6 @@
 out
 gen
 
+.DS_store
 node_modules/
 /uploads/
